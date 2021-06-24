@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "App\Http\Controllers\WelcomeController@index");
-Auth::routes();
+Route::get('/panel', "App\\Http\\Controllers\\Panel\\PanelController@index");
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

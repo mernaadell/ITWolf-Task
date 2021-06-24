@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->integer("category_id")->unsigned()->index();
             $table->string("title")->comment("Post Header");
             $table->text("content");
-            $table->string("image");
+            $table->string("image")->nullable();
             $table->timestamps();
             $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete();
             $table->foreign("category_id")->references("id")->on("categories")->cascadeOnDelete();

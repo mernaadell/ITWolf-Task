@@ -15,9 +15,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.min.css.css') }}" rel="stylesheet">
+
+
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">--}}
+
+    <link href='{{asset("css/font-awesome.css" )}}'rel="stylesheet" type="text/css">
     @yield("styles")
 </head>
 <body>
@@ -33,7 +37,11 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+<!-- jQuery -->
+<script src='{{asset("js/jquery.js")}}'></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src='{{asset("js/bootstrap.js")}}'></script>
 <script src="{{ asset('js/scripts.js') }}" defer></script>
 @yield("scripts")
 </html>
