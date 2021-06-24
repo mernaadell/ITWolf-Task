@@ -45,11 +45,15 @@
                 <div class="card mb-4">
                     <div class="card-header">Search</div>
                     <div class="card-body">
+                        <form action="{{route('welcome.search')}}">
+                            @csrf
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Enter search term..."
-                                   aria-label="Enter search term..." aria-describedby="button-search"/>
-                            <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                            <input class="form-control" type="text" placeholder="Search ..."
+                                   aria-label="Enter search term..." aria-describedby="button-search" name="title"/>
+                            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
                         </div>
+                        </form>
+
                     </div>
                 </div>
                 <!-- Categories widget-->
@@ -57,20 +61,14 @@
                     <div class="card-header">Categories</div>
                     <div class="card-body">
                         <div class="row">
+                            @foreach($categories as $category)
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">Web Design</a></li>
-                                    <li><a href="#!">HTML</a></li>
-                                    <li><a href="#!">Freebies</a></li>
+                                    <li><a href="{{route("welcome.filter",['category'=>$category->id])}}">{{$category->name}}</a></li>
                                 </ul>
                             </div>
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="#!">JavaScript</a></li>
-                                    <li><a href="#!">CSS</a></li>
-                                    <li><a href="#!">Tutorials</a></li>
-                                </ul>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

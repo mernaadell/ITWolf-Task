@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/panel', "App\\Http\\Controllers\\Panel\\PanelController@index");
+Route::get('/panel', "App\\Http\\Controllers\\Panel\\PanelController@index")->name("user.panel");
+
+
 
 
