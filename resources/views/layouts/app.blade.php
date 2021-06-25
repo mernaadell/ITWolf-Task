@@ -22,6 +22,8 @@
 {{--    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">--}}
 
     <link href='{{asset("css/font-awesome.css" )}}'rel="stylesheet" type="text/css">
+
+
     @yield("styles")
 </head>
 <body>

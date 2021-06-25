@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// in the route service provider already has middleware admin

@@ -34,13 +34,20 @@ class WelcomeController extends Controller
 
     function search(Request $request)
     {
-        $posts = Post::where("title", "like", "%" . $request->title . "%")->paginate(8);
-
         $categories = Category::all();
+        if ($request->title) {
+            $posts = Post::where("title", "like", "%" . $request->title . "%")->paginate(8);
 
-        return view("welcome", [
-            'posts' => $posts,
-            'categories' => $categories
-        ]);
+            return view("welcome", [
+                'posts' => $posts,
+                'categories' => $categories
+            ]);
+        } else {
+              $posts = Post::paginate(8);
+            return view("welcome", [
+                'posts' => $posts,
+                'categories' => $categories
+            ]);
+        }
     }
 }
