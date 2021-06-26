@@ -20,4 +20,8 @@
               3. All Posts (you can see all bloggers posts ,edit and delete them) <br>
               4. All Bloggers (you can see all Bloggers Create new one ,edit and delete ) <br>
               5. All Categories (you can see all categories Create new one ,edit and delete)
+
   
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/31679900/123519391-fc2a9200-d678-11eb-9032-644d40e9a4d0.gif)
+
+![screen](https://user-images.githubusercontent.com/31679900/123519401-16fd0680-d679-11eb-8a98-378d9a2fe9ba.png)
