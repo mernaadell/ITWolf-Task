@@ -48,7 +48,7 @@
                                     <tr>
                                         <th>Category Name</th>
                                         <th>Category Slug</th>
-
+                                        <th>No. Posts</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -60,8 +60,10 @@
 
                                             <td>{{$category->name}}</td>
 
-                                            <td><p style="max-width: 300px">{{$category->slug}}</p>
-                                            <td>
+                                            <td>{{$category->slug}}</td>
+                                            <td>{{count($category->posts)}}</td>
+
+                                                <td>
                                                 <form action="{{route('admin.categories.edit',$category->id)}}"
                                                 >
 
@@ -86,7 +88,7 @@
                                     <tr>
                                         <th>Category Name</th>
                                         <th>Category Slug</th>
-
+                                        <th>No. Posts</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
