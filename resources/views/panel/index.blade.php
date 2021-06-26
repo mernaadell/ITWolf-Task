@@ -88,10 +88,10 @@
                                 <a href="#"><i class="fa fa-fax"></i> Posts<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="">All Posts</a>
+                                        <a href="{{route('admin.posts.index')}}">All Posts</a>
                                     </li>
                                     <li>
-                                        <a href="">Create New Post</a>
+                                        <a href="{{route('admin.posts.create')}}">Create New Post</a>
                                     </li>
 
                                 </ul>

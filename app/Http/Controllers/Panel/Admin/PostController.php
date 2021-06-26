@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(8);
 
         return view("panel.admin.posts.index", [
             'posts' => $posts
@@ -24,12 +24,12 @@ class PostController extends Controller
 
         if ($request->name) {
             $posts = Post::where('title', 'like', '%' . $request->name . '%')
-                ->get();
+                ->paginate(8);
             return view("panel.admin.posts.index", [
                 'posts' => $posts
             ]);
         } else {
-            $posts = Post::all();
+            $posts = Post::paginate(8);
             return view("panel.admin.posts.index", [
                 'posts' => $posts
             ]);
@@ -39,7 +39,7 @@ class PostController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(8);
         return view("panel.admin.posts.create", [
             'categories' => $categories,
         ]);
@@ -55,7 +55,7 @@ class PostController extends Controller
             if ($request->has("photo")) {
                 $request['image'] = save_image($request->photo, "images/$category->name");
             }
-            $post = Post::create($request->all());
+            $post = auth()->user()->posts()->create($request->all());
             if ($post) {
                 return back()->with([
                     'success' => 'post created successfully'

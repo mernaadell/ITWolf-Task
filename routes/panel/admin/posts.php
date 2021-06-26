@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 route::resource("posts", "App\Http\Controllers\Panel\Admin\PostController",[
     'as'=>'admin'
 ]);
+
+Route::get('/search/posts', "App\Http\Controllers\Panel\Admin\PostController@search")->name("admin.posts.search");
