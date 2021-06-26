@@ -13,7 +13,7 @@
 12. if you want to see your previous posts:<br>
               1. Visit Login page with Email: mernaadel@gmail.com Password: mernaadel <br>
               2. Visit MyPanel <br>
-              3. My Posts (you can see all your previous posts ,edit and delete them) <br>
+              3. Posts -> My Posts (you can see all your previous posts ,edit and delete them) and create new post <br>
 13. if you want login as an admin : <br>           
               1. Visit Login page with Email: admin@gmail.com Password: adminadmin <br>
               2. Visit MyPanel <br>
