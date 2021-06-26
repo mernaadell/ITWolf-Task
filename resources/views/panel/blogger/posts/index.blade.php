@@ -10,7 +10,7 @@
                         <h1>Posts</h1>
                     </div>
                     <div class="col-xs- col-sm-6 col-md-6 col-lg-6" style="margin-top: 20px">
-                        <form action="{{route("posts.search")}}" class="form-inline ml-auto">
+                        <form action="{{route("blogger.posts.search")}}" class="form-inline ml-auto">
                             @csrf
                             <input type="text" class="form-control mr-2" placeholder="Search"
                                    value="{{ request()->input('name') }}" name="name">
@@ -20,7 +20,7 @@
                         </form>
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="margin-top: 20px">
-                        <form action="{{route('posts.create')}}">
+                        <form action="{{route('blogger.posts.create')}}">
                             @csrf
                             <button class="btn btn-outline-dark  float-right"><i class="fas fa-plus"></i> Add New Post
                             </button>
@@ -63,8 +63,8 @@
                                             </td>
                                             <td><p style="max-width: 300px">{{$post->content}}</p>
                                             <td>
-                                                <form action="{{route('posts.edit',$post->id)}}"
-                                                ">
+                                                <form action="{{route('blogger.posts.edit',$post->id)}}"
+                                                >
 
                                                 @csrf
                                                 <button class="btn " style="background-color: #2c3034;color: white">
@@ -73,7 +73,7 @@
                                                 </form>
                                             </td>
                                             <td>
-                                                <form action="{{route("posts.destroy",$post->id)}}"
+                                                <form action="{{route("blogger.posts.destroy",$post->id)}}"
                                                       method="post">
                                                     @csrf
                                                     @method("DELETE")

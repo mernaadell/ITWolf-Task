@@ -2,7 +2,7 @@
 @section("inner-content")
     <div class="card-header">
         <section class="content-header" style="margin-top: 30px">
-            <form action="{{route('posts.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('blogger.posts.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="card-body">

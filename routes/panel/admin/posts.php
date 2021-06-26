@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // in the route service provider already has middleware admin
+
+route::resource("posts", "App\Http\Controllers\Panel\Admin\PostController",[
+    'as'=>'admin'
+]);

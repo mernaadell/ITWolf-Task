@@ -74,10 +74,10 @@
                                 <a href="#"><i class="fa fa-fax"></i> Posts<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{route("posts.index")}}">My Posts</a>
+                                        <a href="{{route("blogger.posts.index")}}">My Posts</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('posts.create')}}">Create New Post</a>
+                                        <a href="{{route('blogger.posts.create')}}">Create New Post</a>
                                     </li>
 
                                 </ul>
@@ -99,13 +99,13 @@
                         @endif
                         @if(Auth::user()->user_type=="admin")
                             <li>
-                                <a href="#"><i class="fa fa-fax"></i> Users<span class="fa arrow"></span></a>
+                                <a href=""><i class="fa fa-fax"></i> Bloggers<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="">All Users</a>
+                                        <a href="{{route('admin.bloggers.index')}}">All Bloggers</a>
                                     </li>
                                     <li>
-                                        <a href="">Create New User</a>
+                                        <a href="{{route('admin.bloggers.create')}}">Add New Blogger</a>
                                     </li>
 
                                 </ul>

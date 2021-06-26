@@ -1,85 +1,112 @@
 <?php
 
-namespace App\Http\Controllers\Panel\User;
+namespace App\Http\Controllers\Panel\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BloggerRequest;
+use App\Http\Requests\PostRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BloggerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $bloggers = User::all();
+
+        return view("panel.admin.bloggers.index", [
+            'bloggers' => $bloggers
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function search(Request $request)
+    {
+
+        if ($request->name) {
+            $bloggers = User::where('name', 'like', '%' . $request->name . '%')
+                ->get();
+            return view("panel.admin.bloggers.index", [
+                'bloggers' => $bloggers
+            ]);
+        } else {
+            $bloggers = User::all();
+            return view("panel.admin.bloggers.index", [
+                'bloggers' => $bloggers
+            ]);
+        }
+
+    }
+
     public function create()
     {
-        //
+
+        return view("panel.admin.bloggers.create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(BloggerRequest $request)
     {
-        //
+
+        try {
+
+            $blogger = User::create($request->all());
+            if ($blogger) {
+                return back()->with([
+                    'success' => 'Blogger created successfully'
+                ]);
+            }
+        } catch (\Exception $E) {
+
+            return back()->with([
+                'error' => 'Something Wrong please try again'
+            ]);
+        }
+
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+
+        $blogger = User::findOrFail($id);
+        return view("panel.admin.bloggers.edit", [
+            'blogger' => $blogger,
+
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $blogger = User::FindOrFail($id)->update($request->all());
+
+            if ($blogger) {
+                return back()->with([
+                    'success' => 'Blogger Updated successfully'
+                ]);
+            }
+        } catch (\Exception $E) {
+
+            return back()->with([
+                'error' => 'Something Wrong please try again'
+            ]);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return back()->with([
+            'success' => 'User Deleted Successfully'
+        ]);
     }
 }

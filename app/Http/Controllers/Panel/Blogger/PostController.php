@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Panel\User;
+namespace App\Http\Controllers\Panel\Blogger;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
@@ -15,7 +15,7 @@ class PostController extends Controller
     {
         $posts = auth()->user()->posts;
 
-        return view("panel.posts.index", [
+        return view("panel.blogger.posts.index", [
             'posts' => $posts
         ]);
     }
@@ -26,12 +26,12 @@ class PostController extends Controller
         if ($request->name) {
             $posts = auth()->user()->posts()->where('title', 'like', '%' . $request->name . '%')
                 ->get();
-            return view("panel.posts.index", [
+            return view("panel.blogger.posts.index", [
                 'posts' => $posts
             ]);
         } else {
             $posts = auth()->user()->posts;
-            return view("panel.posts.index", [
+            return view("panel.blogger.posts.index", [
                 'posts' => $posts
             ]);
         }
@@ -41,7 +41,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view("panel.posts.create", [
+        return view("panel.blogger.posts.create", [
             'categories' => $categories,
         ]);
     }
@@ -83,7 +83,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $post = Post::findOrFail($id);
-        return view("panel.posts.edit", [
+        return view("panel.blogger.posts.edit", [
             'post' => $post,
             'categories' => $categories
         ]);

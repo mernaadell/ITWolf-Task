@@ -39,21 +39,21 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::prefix('user')
                 ->middleware(['web','auth'])
-                ->group(base_path('routes/panel/user/posts.php'));
+                ->group(base_path('routes/panel/blogger/posts.php'));
 
-            Route::prefix('admin')
+            Route::prefix('')
                 ->middleware(['web','auth','admin'])
                 ->group(base_path('routes/panel/admin/categories.php'));
 
-            Route::prefix('admin')
+            Route::prefix('')
                 ->middleware(['web','auth','admin'])
                 ->group(base_path('routes/panel/admin/posts.php'));
 
-            Route::prefix('admin')
+            Route::prefix('')
                 ->middleware(['web','auth','admin'])
                 ->group(base_path('routes/panel/admin/bloggers.php'));
 
-            Route::prefix('admin')
+            Route::prefix('')
                 ->middleware(['web','auth','admin'])
                 ->group(base_path('routes/panel/admin/posts.php'));
 

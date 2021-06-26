@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-route::resource("posts", "App\Http\Controllers\Panel\User\PostController");
+route::resource("posts", "App\Http\Controllers\Panel\Blogger\PostController", [
+    'as' => 'blogger'
+]);
 
-Route::get('panel/posts/search', "App\Http\Controllers\Panel\User\PostController@search")->name("posts.search");
+Route::get('posts/search', "App\Http\Controllers\Panel\Blogger\PostController@search")->name("blogger.posts.search");
 

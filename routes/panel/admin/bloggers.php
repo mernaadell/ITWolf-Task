@@ -14,3 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // in the route service provider already has middleware admin
+
+route::resource("bloggers", "App\Http\Controllers\Panel\Admin\BloggerController",[
+    'as'=>'admin'
+]);
+
+Route::get('panel/posts/search', "App\Http\Controllers\Panel\Admin\BloggerController@search")->name("admin.bloggers.search");

@@ -2,7 +2,7 @@
 @section("inner-content")
     <div class="card-header">
         <section class="content-header" style="margin-top: 30px">
-            <form action="{{route('posts.update',$post->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('blogger.posts.update',$post->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
                 <div class="card-body">
