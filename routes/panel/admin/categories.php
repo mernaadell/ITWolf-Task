@@ -14,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 // in the route service provider already has middleware admin
 
+route::resource("categories", "App\Http\Controllers\Panel\Admin\CategoryController",[
+    'as'=>'admin'
+]);
+
+Route::get('/search/Categories', "App\Http\Controllers\Panel\Admin\CategoryController@search")->name("admin.categories.search");

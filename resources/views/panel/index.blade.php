@@ -116,10 +116,10 @@
                                 <a href="#"><i class="fa fa-fax"></i> Categories<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="">All Categories</a>
+                                        <a href="{{route('admin.categories.index')}}">All Categories</a>
                                     </li>
                                     <li>
-                                        <a href="">Create New Category</a>
+                                        <a href="{{route('admin.categories.create')}}">Create New Category</a>
                                     </li>
 
                                 </ul>

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <h1>Posts</h1>
+                        <h1>Bloggers</h1>
                     </div>
                     <div class="col-xs- col-sm-6 col-md-6 col-lg-6" style="margin-top: 20px">
                         <form action="{{route('admin.bloggers.search')}}" class="form-inline ml-auto">
