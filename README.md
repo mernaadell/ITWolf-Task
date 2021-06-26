@@ -20,12 +20,14 @@
               3. All Posts (you can see all bloggers posts ,edit and delete them) <br>
               4. All Bloggers (you can see all Bloggers Create new one ,edit and delete ) <br>
               5. All Categories (you can see all categories Create new one ,edit and delete)
-<hr>
-## Design
+<br>
+
+## Design 
+<br>
 1. I was using laravel deafult authentication <br>
 2. I used blog post bootstrap template https://startbootstrap.com/template/blog-post <br>
 3. I used admin panel bootstrap template https://github.com/secondtruth/startmin <br>
-<hr>
+<br>
   
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/31679900/123519391-fc2a9200-d678-11eb-9032-644d40e9a4d0.gif)
 
