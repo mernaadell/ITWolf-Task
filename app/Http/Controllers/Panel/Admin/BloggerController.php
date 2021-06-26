@@ -12,7 +12,7 @@ class BloggerController extends Controller
 {
     public function index()
     {
-        $bloggers = User::all();
+        $bloggers = User::paginate(8);
 
         return view("panel.admin.bloggers.index", [
             'bloggers' => $bloggers
@@ -24,12 +24,12 @@ class BloggerController extends Controller
 
         if ($request->name) {
             $bloggers = User::where('name', 'like', '%' . $request->name . '%')
-                ->get();
+                ->paginate(8);
             return view("panel.admin.bloggers.index", [
                 'bloggers' => $bloggers
             ]);
         } else {
-            $bloggers = User::all();
+            $bloggers = User::paginate(8);
             return view("panel.admin.bloggers.index", [
                 'bloggers' => $bloggers
             ]);

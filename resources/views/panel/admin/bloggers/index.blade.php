@@ -102,7 +102,9 @@
                 </div>
 
             </div>
-
+<div style="float: right">
+    {{$bloggers->links()}}
+</div>
         </section>
     </div>
 @endsection

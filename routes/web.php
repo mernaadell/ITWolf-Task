@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "App\Http\Controllers\WelcomeController@index");
+Route::get('/', "App\Http\Controllers\WelcomeController@index")->name('welcome');
 
 Route::get('/category', "App\\Http\\Controllers\\WelcomeController@filter")->name("welcome.filter");
 
@@ -22,3 +22,6 @@ Route::get('/category/search', "App\\Http\\Controllers\\WelcomeController@search
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//reuse exist route
+Route::get('auth/logout', 'App\Http\Controllers\Auth\AuthController@logout')->name('auth.logout');

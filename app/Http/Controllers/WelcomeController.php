@@ -8,15 +8,22 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
+
+    private $categories;
+
+    public function __construct()
+    {
+        $this->categories = parent::all_categories();
+    }
+
     function index()
     {
         $posts = Post::paginate(8);
 
-        $categories = Category::all();
 
         return view("welcome", [
             'posts' => $posts,
-            'categories' => $categories
+            'categories' => $this->categories
         ]);
     }
 
@@ -24,29 +31,27 @@ class WelcomeController extends Controller
     {
         $posts = Category::where("id", "$request->category")->first()->posts()->paginate(8);
 
-        $categories = Category::all();
-
         return view("welcome", [
             'posts' => $posts,
-            'categories' => $categories
+            'categories' => $this->categories
         ]);
     }
 
     function search(Request $request)
     {
-        $categories = Category::all();
+
         if ($request->title) {
             $posts = Post::where("title", "like", "%" . $request->title . "%")->paginate(8);
 
             return view("welcome", [
                 'posts' => $posts,
-                'categories' => $categories
+                'categories' =>  $this->categories
             ]);
         } else {
-              $posts = Post::paginate(8);
+            $posts = Post::paginate(8);
             return view("welcome", [
                 'posts' => $posts,
-                'categories' => $categories
+                'categories' =>  $this->categories
             ]);
         }
     }
