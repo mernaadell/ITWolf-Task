@@ -10,7 +10,7 @@
 9. `php artisan serve` or use Laravel Valet or Laravel Homestead
 10. Visit `localhost:8000` in your browser
 11. You can access the different blog posts to different bloggers and filter this categories
-12. if you want to see your previous posts:
+12. if you want to see your previous posts:<br>
               1. Visit Login page with Email: mernaadel@gmail.com Password: mernaadel
               2. Visit MyPanel
               3. My Posts (you can see all your previous posts ,edit and delete them)
