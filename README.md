@@ -21,7 +21,7 @@
               4. All Bloggers (you can see all Bloggers Create new one ,edit and delete ) <br>
               5. All Categories (you can see all categories Create new one ,edit and delete)
 <br>
-<hr>
+
 ## Design 
 <br>
 1. I was using laravel default authentication <br>
