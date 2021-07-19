@@ -49,6 +49,7 @@
                                         <th>Post Title</th>
                                         <th>Image</th>
                                         <th>Content</th>
+                                        <th>Category</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -61,8 +62,10 @@
                                             <td>{{$post->title}}</td>
                                             <td><img src="{{asset($post->image)}}" alt="" width="100px" height="100px">
                                             </td>
-                                            <td><p style="max-width: 300px">{{$post->content}}</p>
+                                            <td><p style="max-width: 300px">{{$post->content}}</p></td>
+                                            <td>{{$post->category->name}}</td>
                                             <td>
+
                                                 <form action="{{route('admin.posts.edit',$post->id)}}"
                                                 >
 
@@ -88,6 +91,7 @@
                                         <th>Post Title</th>
                                         <th>Image</th>
                                         <th>Content</th>
+                                        <th>Category</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>

@@ -25,7 +25,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence(3),
             'content' => $this->faker->sentence(25),
             'category_id' => rand(1,5),
-            'user_id' =>rand(1,10),
+            'user_id' =>rand(1,12),
             'image'=>$this->faker->imageUrl($width = 900, $height = 400)
         ];
     }

@@ -49,6 +49,7 @@
                                         <th>Post Title</th>
                                         <th>Image</th>
                                         <th>Content</th>
+                                        <th>Category Name</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -62,14 +63,16 @@
                                             <td><img src="{{asset($post->image)}}" alt="" width="100px" height="100px">
                                             </td>
                                             <td><p style="max-width: 300px">{{$post->content}}</p>
+                                            </td>
+                                            <td>{{$post->category->name}}</td>
                                             <td>
                                                 <form action="{{route('blogger.posts.edit',$post->id)}}"
                                                 >
 
-                                                @csrf
-                                                <button class="btn " style="background-color: #2c3034;color: white">
-                                                    Edit
-                                                </button>
+                                                    @csrf
+                                                    <button class="btn " style="background-color: #2c3034;color: white">
+                                                        Edit
+                                                    </button>
                                                 </form>
                                             </td>
                                             <td>
@@ -88,6 +91,7 @@
                                         <th>Post Title</th>
                                         <th>Image</th>
                                         <th>Content</th>
+                                        <th>Category Name</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
