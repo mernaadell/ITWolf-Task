@@ -10,6 +10,9 @@ function save_image($image_name, $path)
 
     return $path.'/'.$filename;
 }
+function new_fun(){
+    echo "hii";
+}
 
 function new_fun(){
     echo "hii2";
