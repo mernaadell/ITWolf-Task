@@ -11,7 +11,7 @@ function save_image($image_name, $path)
     return $path.'/'.$filename;
 }
 function new_fun(){
-    echo "hii";
+    echo "hii2";
 }
 
 
